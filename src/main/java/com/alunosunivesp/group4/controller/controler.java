@@ -3,6 +3,8 @@ package com.alunosunivesp.group4.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.alunosunivesp.group4.model.SensorModel;
 import com.alunosunivesp.group4.service.SensorService;
 
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @RequestMapping("/api/v8")
 public class controler {
@@ -23,8 +26,8 @@ public class controler {
 	SensorModel dataSensor = new SensorModel();
 	
 	@GetMapping("/sensors")
-	public List<SensorModel> getSonsor() {
-		return sensorService.getSensors();
+	public ResponseEntity<List<SensorModel>> getSonsor() {
+		return ResponseEntity.ok( sensorService.getSensors() );
 	}
 	
 	@PostMapping("/sensor")
