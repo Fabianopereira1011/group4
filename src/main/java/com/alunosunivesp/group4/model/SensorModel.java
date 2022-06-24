@@ -15,10 +15,14 @@ import javax.persistence.GenerationType;
 public class SensorModel {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
-	private long id;
+	//@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	private String id; 
 	
-	private String nome;
+	private String tipo; 
+	
+	private int chuvaPrevisao;
+	
+	private int fluviometro;
 	
 	private String local;
 	
