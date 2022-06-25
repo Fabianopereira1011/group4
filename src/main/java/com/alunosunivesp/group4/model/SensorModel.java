@@ -20,9 +20,9 @@ public class SensorModel {
 	
 	private String tipo; 
 	
-	private int chuvaPrevisao;
+	private String chuvaPrevisao;
 	
-	private int fluviometro;
+	private String fluviometro;
 	
 	private String local;
 	
@@ -39,5 +39,6 @@ public class SensorModel {
 	private int wateLevel;
 	
 	private String description;
+
 	
 }

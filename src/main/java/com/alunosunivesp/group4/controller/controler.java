@@ -43,17 +43,19 @@ public class controler {
 	}
 	
 	@GetMapping("/fluviometro/{nivel}")
-	public SensorModel getSensorFluviometro(@PathVariable int nivel) {
+	public SensorModel getSensorFluviometro(@PathVariable String nivel) {
 		dataSensor.setId("fluviometro");
 		dataSensor.setTipo("fluviometro");
 		dataSensor.setFluviometro(nivel);
 		return sensorService.saveSensor(dataSensor);
 	}
 	
-	@GetMapping("/chuva/{nivel}")
-	public SensorModel getChuva(@PathVariable int nivel) {
+	@GetMapping("/chuva/{nomeChuva}")
+	public SensorModel getChuva(@PathVariable String nomeChuva) {
+		
 		dataSensor.setId("previsao_inteligente");
-		dataSensor.setChuvaPrevisao(nivel);
+		
+		dataSensor.setChuvaPrevisao(nomeChuva);
 		return sensorService.saveSensor(dataSensor);
 	}
 	
